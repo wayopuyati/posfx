@@ -32,3 +32,5 @@ gradle-app.setting
 hs_err_pid*
 
 !gradle-wrapper.jar
+
+javac*.args

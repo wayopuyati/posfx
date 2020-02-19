@@ -5,11 +5,16 @@ plugins {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 javafx {
     version = "13"
     modules = [ 'javafx.controls' ]
+}
+
+dependencies {
+    compile 'org.kordamp.bootstrapfx:bootstrapfx-core:0.2.4'
 }
 
 compileJava {
