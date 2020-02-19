@@ -15,3 +15,7 @@ Tutorial project for creating POS application with javafx
 ```sh
 gradlew run
 ```
+
+# ผลการ run
+
+![screenshot](./screenshots/step-01-screenshot.png)
