@@ -14,17 +14,19 @@ import org.kordamp.bootstrapfx.scene.layout.Panel;
 public class POSFX extends Application implements ViewChangeListener {
 
     final String title = "POSFX Application";
+
+    BorderPane content = new BorderPane();
+    SaleView saleView = new SaleView();
+    AdminView adminView = new AdminView();
+    ButtonPane buttonPane = new ButtonPane();
     
     @Override
     public void start(final Stage stage) throws Exception {
         Panel panel = new Panel(title);
         panel.getStyleClass().add("panel-primary");
 
-        BorderPane content = new BorderPane();
         content.setPadding(new Insets(20));
-
-        content.setCenter(new SaleView());
-        ButtonPane buttonPane = new ButtonPane();
+        content.setCenter(saleView);
         content.setBottom(buttonPane);
         buttonPane.setViewChangeListener(this);
 
@@ -39,9 +41,15 @@ public class POSFX extends Application implements ViewChangeListener {
     }
 
     public void setView(String view) {
-        var alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("View changed to "+view);
-        alert.showAndWait();
+        // var alert = new Alert(Alert.AlertType.INFORMATION);
+        // alert.setHeaderText("View changed to "+view);
+        // alert.showAndWait();
+        System.out.println(view);
+        if (view.equals("Sale")) {
+            content.setCenter(saleView);
+        } else if (view.equals("Admin")) {
+            content.setCenter(adminView);
+        }
     }
 
 }

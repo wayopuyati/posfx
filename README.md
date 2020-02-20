@@ -95,3 +95,10 @@ public class POSFX extends Application {
 จัดกลุ่มแยกคลาส เพิ่ม interface 
 
 ![screenshot-04](./screenshots/step-04.png)
+
+# Step 05
+
+ปรับ SaleView เพิ่ม AdminView และ Product
+
+![screenshot-05a](./screenshots/step-05a.png)
+![screenshot-05b](./screenshots/step-05b.png)
