@@ -89,3 +89,9 @@ public class POSFX extends Application {
 จัด layout สำหรับแสดง รายการสินค้าโดยใช้ BorderPane, GridPane, HBox, ImageView
 
 ![screenshot](./screenshots/step-03.png)
+
+# Step 04
+
+จัดกลุ่มแยกคลาส เพิ่ม interface 
+
+![screenshot-04](./screenshots/step-04.png)
