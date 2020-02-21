@@ -1,11 +1,13 @@
 import java.util.List;
 
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
+import javafx.scene.control.TreeTableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
@@ -14,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.util.Callback;
 
 public class SaleView extends BorderPane {
 
@@ -44,6 +47,7 @@ public class SaleView extends BorderPane {
         setCenter(viewPane);
 
         TableView<Product> table = new TableView<>();
+        table.setEditable(true);
         table.setItems(FXCollections.observableArrayList(products));
         TableColumn<Product, String> descriptionCol = new TableColumn<>("สินค้า");
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description")); //products.get(0).descriptionProperty().getName()));
