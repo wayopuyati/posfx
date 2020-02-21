@@ -21,17 +21,18 @@ import javafx.util.Callback;
 public class SaleView extends BorderPane {
 
    static List<Product> products = List.of(
-      new Product("Shirt", 250.00, 10),
-      new Product("Jeans", 1550.00, 15),
-      new Product("Mug", 150.00, 20),
-      new Product("Jacket", 5499.00, 5),
-      new Product("Computer", 26490.00, 8)
+      new Product("Shirt", 250.00, 10)
+    //   new Product("Jeans", 1550.00, 15),
+    //   new Product("Mug", 150.00, 20),
+    //   new Product("Jacket", 5499.00, 5),
+    //   new Product("Computer", 26490.00, 8)
     );
 
     GridPane productsView = new GridPane();
     GridPane menuView = new GridPane();
-
-    public SaleView() {
+    SelectProductListener listener;
+    public SaleView(SelectProductListener listener) {
+        this.listener = listener;
         createView();
     }
 
@@ -39,7 +40,9 @@ public class SaleView extends BorderPane {
         // productsView.setPadding(new Insets(15.0));
         int i = 0;
         for (Product product : products) {
-            productsView.add(new ProductView(product), i%3, i/3);
+            ProductView view = new ProductView(product); 
+            view.setSelectProductListener(listener);
+            productsView.add(view, i%3, i/3);
             i++;
         }
         ScrollPane viewPane = new ScrollPane(productsView);

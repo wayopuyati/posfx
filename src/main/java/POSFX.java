@@ -11,12 +11,12 @@ import javax.swing.border.BevelBorder;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 
-public class POSFX extends Application implements ViewChangeListener {
+public class POSFX extends Application implements ViewChangeListener, SelectProductListener {
 
     final String title = "POSFX Application";
 
     BorderPane content = new BorderPane();
-    SaleView saleView = new SaleView();
+    SaleView saleView = new SaleView(this);
     AdminView adminView = new AdminView();
     ButtonPane buttonPane = new ButtonPane();
     
@@ -50,6 +50,10 @@ public class POSFX extends Application implements ViewChangeListener {
         } else if (view.equals("Admin")) {
             content.setCenter(adminView);
         }
+    }
+
+    public void selectProduct(Product p) {
+        System.out.println(p);
     }
 
 }
