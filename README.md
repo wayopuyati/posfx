@@ -102,3 +102,8 @@ public class POSFX extends Application {
 
 ![screenshot-05a](./screenshots/step-05a.png)
 ![screenshot-05b](./screenshots/step-05b.png)
+
+# Step 06
+
+เพิ่ม animation ปรับ productview และเพิ่ม SelectProductListener
+
